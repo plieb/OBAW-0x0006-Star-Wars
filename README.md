@@ -1,7 +1,7 @@
 [logo]: https://github.com/plieb/OBAW-0x0006-Star-Wars/blob/master/assets/OBAW%20-%20Week%200x0006.png "Salesforce + Recast.AI"
 ![alt text][logo]
 
-This bot is part of the #[OBAW](https://github.com/plieb/OBAW) project - Week 0x0005 - Salesforce
+This bot is part of the #[OBAW](https://github.com/plieb/OBAW) project - Week 0x0006 - Star Wars
 
 # Salesforce Bot for Facebook Messenger using Recast.AI
 
