@@ -21,7 +21,7 @@ export default async function getInfoPeople (res) {
   const eyeColor = peopleAnswer.results[0].eye_color
   const birthYear = peopleAnswer.results[0].birth_year
   const gender = peopleAnswer.results[0].gender
-  const info = `${people.value} :\n\n- height:${height}, \n\n- mass:${mass}, \n\n- hair color:${hairColor}, \n\n- skin color:${skinColor}, \n\n- eye color:${eyeColor}, \n\n- birth year:${birthYear}, \n\ngender:${gender}`
+  const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
   replies.push(formatter.formatMsg(info))
   console.log('======================================')
   console.log(peopleAnswer)
