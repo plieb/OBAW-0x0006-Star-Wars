@@ -18,10 +18,10 @@ Follow the instructions below to create your own instance of the bot:
 
 1. Fill in the config variables as described.
 
-    - For **BC_USER_SLUG** blank for now (filled at step 4)
-    - For **BC_BOT_ID** blank for now (filled at step 4)
-    - For **BC_USER_TOKEN** blank for now (filled at step 4)
-    - For **RE_BOT_TOKEN** blank for now (filled at step 5)
+    - For **BC_USER_SLUG** blank for now (filled at step 2)
+    - For **BC_BOT_ID** blank for now (filled at step 2)
+    - For **BC_USER_TOKEN** blank for now (filled at step 2)
+    - For **RE_BOT_TOKEN** blank for now (filled at step 3)
 
 1. Time to replace the callback URL from your Salesforce app to your **Heroku URL**
 
