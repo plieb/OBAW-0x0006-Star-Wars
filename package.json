@@ -20,7 +20,8 @@
     "express": "^4.13.4",
     "recastai": "^2.3.0",
     "recastai-botconnector": "^1.0.1",
-    "request": "^2.71.0"
+    "superagent": "^3.3.1",
+    "superagent-promise": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",
