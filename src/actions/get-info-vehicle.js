@@ -7,7 +7,7 @@ export default async function getInfoVehicle(res) {
 
   const replies = []
   const quickReplies = []
-  const starship = res.getMemory('vehicle')
+  const vehicle = res.getMemory('vehicle')
   console.log('======================================')
   console.log(vehicle)
   console.log('======================================')
