@@ -31,6 +31,11 @@ export default async function getInfoPlanet(res) {
     }
     if (planetAnswer.results[0].films.length) {
       const responseFilm = await agent('GET', planetAnswer.results[0].films[0])
+      console.log('======================================')
+      console.log(planetAnswer.results[0].films)
+      console.log(planetAnswer.results[0])
+      console.log(responseFilm)
+      console.log('======================================')
       const filmAnswer = responseFilm.body
       quickReplies.push({ name: filmAnswer.name, value: `Can I get information about ${filmAnswer.name}` })
     }
