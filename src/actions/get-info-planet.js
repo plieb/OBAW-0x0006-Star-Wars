@@ -34,6 +34,9 @@ export default async function getInfoPlanet(res) {
       const filmAnswer = responsePlanet.body
       quickReplies.push({ name: filmAnswer.name, value: `Can I get information about ${filmAnswer.name}` })
     }
+    console.log('======================================')
+    console.log(quickReplies)
+    console.log('======================================')
     replies.push(formatter.formatQuickReplies(planet, quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${planet.value}`))
