@@ -5,7 +5,7 @@ exports.formatMsg = msg => ({
   content: msg,
 })
 
-exports.formatQuickReplies = (quickRp, res) => {
+exports.formatQuickReplies = (quickRp) => {
   const elements = []
   quickRp.forEach((elem) => {
     elements.push({
@@ -16,7 +16,7 @@ exports.formatQuickReplies = (quickRp, res) => {
   return {
     type: 'quickReplies',
     content: {
-      title: `More information about ${res.value}`,
+      title: 'More information',
       buttons: elements,
     },
   }
