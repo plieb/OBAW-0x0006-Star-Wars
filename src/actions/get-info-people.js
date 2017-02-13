@@ -30,6 +30,9 @@ export default async function getInfoPeople (res) {
       quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
     }
     console.log('======================================')
+    console.log(peopleAnswer)
+    console.log('======================================')
+    console.log('======================================')
     console.log(peopleAnswer.results[0].starships.length)
     console.log(peopleAnswer.results[0].starships)
     console.log(peopleAnswer.results[0].starships[0])
