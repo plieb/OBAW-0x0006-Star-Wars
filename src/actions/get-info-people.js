@@ -2,7 +2,7 @@
 const agent = require('superagent-promise')(require('superagent'), Promise)
 const formatter = require('../formatter')
 
-export default async function getInfoPeople (res) {
+export default async function getInfoPeople(res) {
   console.log('GET INFO PEOPLE')
 
   const replies = []
@@ -29,25 +29,19 @@ export default async function getInfoPeople (res) {
       const planetAnswer = responsePlanet.body
       quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
     }
-    console.log('======================================')
-    console.log(peopleAnswer)
-    console.log('======================================')
-    console.log('======================================')
-    console.log(peopleAnswer.results[0].starships.length)
-    console.log(peopleAnswer.results[0].starships)
-    console.log(peopleAnswer.results[0].starships[0])
-    console.log('======================================')
     if (peopleAnswer.results[0].starships.length) {
       const responseStarship = await agent('GET', peopleAnswer.results[0].starships[0])
       const starshipAnswer = responseStarship.body
       quickReplies.push({ name: starshipAnswer.name, value: `Can I get information about ${starshipAnswer.name}` })
     }
-      replies.push(formatter.formatQuickReplies(quickReplies))
+    if (peopleAnswer.results[0].vehicles.length) {
+      const responseVehicle = await agent('GET', peopleAnswer.results[0].vehicles[0])
+      const vehicleAnswer = responseVehicle.body
+      quickReplies.push({ name: vehicleAnswer.name, value: `Can I get information about ${vehicleAnswer.name}` })
+    }
+    replies.push(formatter.formatQuickReplies(quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
   }
-//  replies.push(formatter.formatPeople(payload))
-
-
   return replies
 }
