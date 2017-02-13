@@ -3,6 +3,7 @@ const actions = {
   'get-info-planet': require('./get-info-planet'),
   'get-info-film': require('./get-info-film'),
   'get-info-starship': require('./get-info-starship'),
+  'get-info-vehicle': require('./get-info-vehicle'),
 }
 
 export default function handleAction(res, message) {
