@@ -37,7 +37,7 @@ export default async function getInfoPlanet(res) {
     console.log('======================================')
     console.log(quickReplies)
     console.log('======================================')
-    replies.push(formatter.formatQuickReplies(planet, quickReplies))
+    replies.push(formatter.formatQuickReplies(quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${planet.value}`))
   }
