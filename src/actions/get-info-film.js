@@ -3,7 +3,7 @@ const agent = require('superagent-promise')(require('superagent'), Promise)
 const formatter = require('../formatter')
 
 export default async function getInfoFilm(res) {
-  console.log('GET INFO PEOPLE')
+  console.log('GET INFO FILM')
 
   const replies = []
   const quickReplies = []
