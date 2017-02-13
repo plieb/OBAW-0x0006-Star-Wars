@@ -24,6 +24,12 @@ export default async function getInfoPeople (res) {
     const gender = peopleAnswer.results[0].gender
     const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
     replies.push(formatter.formatMsg(info))
+    console.log('======================================')
+    console.log(peopleAnswer.homeworld)
+    if (peopleAnswer.homeworld !== 'unknown') {
+    console.log(peopleAnswer.homeworld)
+    }
+    console.log('======================================')
     if (peopleAnswer.homeworld) {
       const responsePlanet = await agent('GET', peopleAnswer.homeworld)
       console.log('======================================')
