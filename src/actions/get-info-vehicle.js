@@ -34,7 +34,7 @@ export default async function getInfoVehicle(res) {
       const filmAnswer = responseFilm.body
       quickReplies.push({ name: filmAnswer.title, value: `Can I get information about ${filmAnswer.title}` })
     }
-    replies.push(formatter.formatQuickReplies(quickReplies, starship))
+    replies.push(formatter.formatQuickReplies(quickReplies, vehicle))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${vehicle.value}`))
   }
