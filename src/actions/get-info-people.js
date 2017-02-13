@@ -39,7 +39,7 @@ export default async function getInfoPeople(res) {
       const vehicleAnswer = responseVehicle.body
       quickReplies.push({ name: vehicleAnswer.name, value: `Can I get information about ${vehicleAnswer.name}` })
     }
-    replies.push(formatter.formatQuickReplies(people, quickReplies))
+    replies.push(formatter.formatQuickReplies(quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
   }
