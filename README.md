@@ -1,5 +1,5 @@
-[logo]: https://github.com/plieb/OBAW-0x0006-Star-Wars/blob/master/assets/OBAW%20-%20Week%200x0006.png "Salesforce + Recast.AI"
-![alt text][logo]
+[logo]: https://github.com/plieb/OBAW-0x0006-Star-Wars/blob/master/assets/OBAW%20-%20Week%200x0006.png "Star Wars + Recast.AI"
+![Star Wars + Recast.AI][logo]
 
 This bot is part of the #[OBAW](https://github.com/plieb/OBAW) project - Week 0x0006 - Star Wars
 
@@ -22,8 +22,6 @@ Follow the instructions below to create your own instance of the bot:
     - For **BC_BOT_ID** blank for now (filled at step 2)
     - For **BC_USER_TOKEN** blank for now (filled at step 2)
     - For **RE_BOT_TOKEN** blank for now (filled at step 3)
-
-1. Time to replace the callback URL from your Salesforce app to your **Heroku URL**
 
 ## Step 2: Create your bot on Bot Connector
 
