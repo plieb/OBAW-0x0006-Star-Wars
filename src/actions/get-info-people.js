@@ -6,7 +6,7 @@ export default async function getInfoPeople (res) {
   console.log('GET INFO PEOPLE')
 
   const replies = []
-
+  const quickReplies = []
   const people = res.getMemory('people')
   console.log('======================================')
   console.log(people)
@@ -14,20 +14,25 @@ export default async function getInfoPeople (res) {
   replies.push(formatter.formatMsg(`Looking for information regarding ${people.value}`))
   const response = await agent('GET', `https://swapi.co/api/people/?search=${people.value}`)
   const peopleAnswer = response.body
-  const height = peopleAnswer.results[0].height
-  const mass = peopleAnswer.results[0].mass
-  const hairColor = peopleAnswer.results[0].hair_color
-  const skinColor = peopleAnswer.results[0].skin_color
-  const eyeColor = peopleAnswer.results[0].eye_color
-  const birthYear = peopleAnswer.results[0].birth_year
-  const gender = peopleAnswer.results[0].gender
-  const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
-  replies.push(formatter.formatMsg(info))
-  console.log('======================================')
-  console.log(peopleAnswer)
-  console.log()
-  console.log(peopleAnswer.results[0].name)
-  console.log('======================================')
+  if (peopleAnswer.results.length) {
+    const height = peopleAnswer.results[0].height
+    const mass = peopleAnswer.results[0].mass
+    const hairColor = peopleAnswer.results[0].hair_color
+    const skinColor = peopleAnswer.results[0].skin_color
+    const eyeColor = peopleAnswer.results[0].eye_color
+    const birthYear = peopleAnswer.results[0].birth_year
+    const gender = peopleAnswer.results[0].gender
+    const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
+    replies.push(formatter.formatMsg(info))
+    if (peopleAnswer.homeworld) {
+      const responsePlanet = await agent('GET', `https://swapi.co/api/people/?search=${people.value}`)
+      const planetAnswer = responsePlanet.body
+      quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
+    }
+    replies.push(formatter.formatMsg(info))
+  } else {
+    replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
+  }
 //  replies.push(formatter.formatPeople(payload))
 
 

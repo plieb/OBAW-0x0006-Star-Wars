@@ -5,44 +5,20 @@ exports.formatMsg = msg => ({
   content: msg,
 })
 
-exports.formatProperties = (properties) => {
+exports.formatQuickReplies = (array) => {
   const elements = []
-  properties.forEach((property) => {
+  array.forEach((elem) => {
     elements.push({
-      title: property.get('Title__c'),
-      subtitle: `${property.get('Address__c')}, ${property.get('City__c')} ${property.get('State__c')} · ${(property.get('Price__c')).format('$0,0')}`,
-      imageUrl: property.get('Picture__c'),
-      buttons: [
-        {
-          type: 'postback',
-          title: 'Schedule visit',
-          value: JSON.stringify({
-            text: 'Schedule visit',
-            propertyId: property.getId(),
-          }),
-        },
-        {
-          type: 'postback',
-          title: 'View broker info',
-          value: JSON.stringify({
-            text: 'View broker info',
-            propertyId: property.getId(),
-          }),
-        },
-        {
-          type: 'postback',
-          title: 'Contact me',
-          value: JSON.stringify({
-            text: 'Contact me',
-            propertyId: property.getId(),
-          }),
-        },
-      ],
+      title: elem.name,
+      value: elem.value,
     })
   })
   return {
-    type: 'carouselle',
-    content: elements,
+    type: 'quickReplies',
+    content: {
+      title: 'More information',
+      buttons: elements,
+    },
   }
 }
 
