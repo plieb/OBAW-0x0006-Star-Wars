@@ -39,7 +39,7 @@ export default async function getInfoPlanet(res) {
       console.log('======================================')
       console.log(filmAnswer)
       console.log('======================================')
-      quickReplies.push({ name: filmAnswer.name, value: `Can I get information about ${filmAnswer.name}` })
+      quickReplies.push({ name: filmAnswer.title, value: `Can I get information about ${filmAnswer.title}` })
     }
     console.log('======================================')
     console.log(quickReplies)
