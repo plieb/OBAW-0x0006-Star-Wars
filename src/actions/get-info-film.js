@@ -20,7 +20,7 @@ export default async function getInfoFilm(res) {
     const director = filmAnswer.results[0].director
     const producer = filmAnswer.results[0].producer
     const releaseDate = filmAnswer.results[0].release_date
-    const info = `${film.value} :\n- title: ${title}\n- episode id: ${episodeId}\n- director: ${director}\n- produce: ${producer}\n- release date: ${releaseDate}`
+    const info = `${film.value} :\n- Title: ${title}\n- Episode id: ${episodeId}\n- Director: ${director}\n- Produce: ${producer}\n- Release date: ${releaseDate}`
     replies.push(formatter.formatMsg(info))
     if (filmAnswer.results[0].characters.length) {
       const responseCharacter = await agent('GET', filmAnswer.results[0].characters[0])
@@ -42,7 +42,7 @@ export default async function getInfoFilm(res) {
       const vehicleAnswer = responseVehicle.body
       quickReplies.push({ name: vehicleAnswer.name, value: `Can I get information about ${vehicleAnswer.name}` })
     }
-    replies.push(formatter.formatQuickReplies(quickReplies))
+    replies.push(formatter.formatQuickReplies(film, quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${film.value}`))
   }

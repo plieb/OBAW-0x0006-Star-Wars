@@ -22,7 +22,7 @@ export default async function getInfoPeople(res) {
     const eyeColor = peopleAnswer.results[0].eye_color
     const birthYear = peopleAnswer.results[0].birth_year
     const gender = peopleAnswer.results[0].gender
-    const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
+    const info = `${people.value} :\n- Height: ${height}\n- Mass: ${mass}\n- Hair color: ${hairColor}\n- Skin color: ${skinColor}\n- Eye color: ${eyeColor}\n- Birth year: ${birthYear}\n- Gender: ${gender}`
     replies.push(formatter.formatMsg(info))
     if (peopleAnswer.results[0].homeworld) {
       const responsePlanet = await agent('GET', peopleAnswer.results[0].homeworld)
@@ -39,7 +39,7 @@ export default async function getInfoPeople(res) {
       const vehicleAnswer = responseVehicle.body
       quickReplies.push({ name: vehicleAnswer.name, value: `Can I get information about ${vehicleAnswer.name}` })
     }
-    replies.push(formatter.formatQuickReplies(quickReplies))
+    replies.push(formatter.formatQuickReplies(people, quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
   }

@@ -11,7 +11,7 @@ export default function handleAction(res, message) {
   let replies = []
   if (actions[currentAction]) {
     console.log('Enter action')
-    replies = actions[currentAction].default(res, message)
+    replies = actions[currentAction].default(res)
   } else if (res.reply()) {
     replies.push({
       type: 'text',
