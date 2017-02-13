@@ -22,24 +22,18 @@ export default async function getInfoPeople (res) {
     const eyeColor = peopleAnswer.results[0].eye_color
     const birthYear = peopleAnswer.results[0].birth_year
     const gender = peopleAnswer.results[0].gender
-    const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}`
+    const info = `${people.value} :\n- height: ${height}\n- mass: ${mass}\n- hair color: ${hairColor}\n- skin color: ${skinColor}\n- eye color: ${eyeColor}\n- birth year: ${birthYear}\n- gender: ${gender}\n\n See below for cmplementary information.`
     replies.push(formatter.formatMsg(info))
-    console.log('======================================')
-    console.log(peopleAnswer.results[0].homeworld)
-    if (peopleAnswer.results[0].homeworld !== 'unknown') {
-      console.log(peopleAnswer.results[0].homeworld)
-    }
-    console.log('======================================')
     if (peopleAnswer.results[0].homeworld) {
       const responsePlanet = await agent('GET', peopleAnswer.results[0].homeworld)
-      console.log('======================================')
-      console.log(responsePlanet)
-      console.log('======================================')
       const planetAnswer = responsePlanet.body
       quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
-      console.log('======================================')
-      console.log(quickReplies)
-      console.log('======================================')
+      replies.push(formatter.formatQuickReplies(quickReplies))
+    }
+    if (peopleAnswer.results[0].starships.length) {
+      const responseStarship = await agent('GET', peopleAnswer.results[0].starships[0])
+      const starshipAnswer = responseStarship.body
+      quickReplies.push({ name: starshipAnswer.name, value: `Can I get information about ${starshipAnswer.name}` })
       replies.push(formatter.formatQuickReplies(quickReplies))
     }
   } else {
