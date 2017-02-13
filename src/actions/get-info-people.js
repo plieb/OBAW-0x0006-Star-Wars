@@ -28,14 +28,13 @@ export default async function getInfoPeople (res) {
       const responsePlanet = await agent('GET', peopleAnswer.results[0].homeworld)
       const planetAnswer = responsePlanet.body
       quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
-      replies.push(formatter.formatQuickReplies(quickReplies))
     }
     if (peopleAnswer.results[0].starships.length) {
       const responseStarship = await agent('GET', peopleAnswer.results[0].starships[0])
       const starshipAnswer = responseStarship.body
       quickReplies.push({ name: starshipAnswer.name, value: `Can I get information about ${starshipAnswer.name}` })
-      replies.push(formatter.formatQuickReplies(quickReplies))
     }
+      replies.push(formatter.formatQuickReplies(quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
   }
