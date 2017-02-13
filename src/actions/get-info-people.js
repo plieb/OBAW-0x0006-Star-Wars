@@ -28,8 +28,8 @@ export default async function getInfoPeople (res) {
       const responsePlanet = await agent('GET', `https://swapi.co/api/people/?search=${people.value}`)
       const planetAnswer = responsePlanet.body
       quickReplies.push({ name: planetAnswer.name, value: `Can I get information about ${planetAnswer.name}` })
+      replies.push(formatter.quickReplies(quickReplies))
     }
-    replies.push(formatter.formatMsg(info))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${people.value}`))
   }
