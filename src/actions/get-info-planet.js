@@ -30,14 +30,14 @@ export default async function getInfoPlanet(res) {
       quickReplies.push({ name: characterAnswer.name, value: `Can I get information about ${characterAnswer.name}` })
     }
     if (planetAnswer.results[0].films.length) {
-      const responsePlanet = await agent('GET', planetAnswer.results[0].films[0])
-      const filmAnswer = responsePlanet.body
+      const responseFilm = await agent('GET', planetAnswer.results[0].films[0])
+      const filmAnswer = responseFilm.body
       quickReplies.push({ name: filmAnswer.name, value: `Can I get information about ${filmAnswer.name}` })
     }
     console.log('======================================')
     console.log(quickReplies)
     console.log('======================================')
-    replies.push(formatter.formatQuickReplies(quickReplies))
+    replies.push(formatter.formatQuickReplies(quickReplies, planet))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${planet.value}`))
   }
