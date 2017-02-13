@@ -12,7 +12,7 @@ export default async function getInfoStarship(res) {
   console.log(starship)
   console.log('======================================')
   replies.push(formatter.formatMsg(`Looking for information regarding ${starship.value}`))
-  const response = await agent('GET', `https://swapi.co/api/planets/?search=${starship.value}`)
+  const response = await agent('GET', `https://swapi.co/api/starships/?search=${starship.value}`)
   const starshipAnswer = response.body
   if (starshipAnswer.results.length) {
     const manufacturer = starshipAnswer.results[0].manufacturer
@@ -24,7 +24,7 @@ export default async function getInfoStarship(res) {
     const consumables = starshipAnswer.results[0].consumables
     const info = `${starship.value} :\n- Manufacturer: ${manufacturer}\n- Cost in credits: ${costInCredits}\n- Lenght: ${length}\n- Crew: ${crew}- Passengers: ${passengers}\n- Cargo capacity: ${cargoCapacity}\n- Consumables: ${consumables}`
     replies.push(formatter.formatMsg(info))
-    if (starshipAnswer.results[0].residents.length) {
+    if (starshipAnswer.results[0].pilots.length) {
       const responsePilot = await agent('GET', starshipAnswer.results[0].pilots[0])
       const pilotAnswer = responsePilot.body
       quickReplies.push({ name: pilotAnswer.name, value: `Can I get information about ${pilotAnswer.name}` })
