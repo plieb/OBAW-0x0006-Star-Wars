@@ -26,12 +26,12 @@ export default async function getInfoPeople (res) {
     replies.push(formatter.formatMsg(info))
     console.log('======================================')
     console.log(peopleAnswer.homeworld)
-    if (peopleAnswer.homeworld !== 'unknown') {
-    console.log(peopleAnswer.homeworld)
+    if (peopleAnswer.peopleAnswer.results[0].homeworld !== 'unknown') {
+      console.log(peopleAnswer.homeworld)
     }
     console.log('======================================')
-    if (peopleAnswer.homeworld) {
-      const responsePlanet = await agent('GET', peopleAnswer.homeworld)
+    if (peopleAnswer.peopleAnswer.results[0].homeworld) {
+      const responsePlanet = await agent('GET', peopleAnswer.peopleAnswer.results[0].homeworld)
       console.log('======================================')
       console.log(responsePlanet)
       console.log('======================================')
