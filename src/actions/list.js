@@ -19,6 +19,7 @@ export default async function getList(res) {
     filmAnswer.results.forEach((f) => {
       quickReplies.push({ name: f.title, value: `Can I get information about ${f.title}` })
     })
+    replies.push(formatter.formatQuickReplies(quickReplies, list))
   } else if (list.value === 'people') {
     Math.floor((Math.random() * 10) + 1)
   } else {
