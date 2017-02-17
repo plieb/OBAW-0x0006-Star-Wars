@@ -51,7 +51,7 @@ export default async function getList(res) {
     peopleAnswer.results.forEach((f) => {
       quickReplies.push({ name: f.name, value: `Can I get information about ${f.name}` })
     })
-    replies.push(formatter.formatQuickReplies(quickReplies, list))
+    replies.push(formatter.formatQuickReplies(quickReplies))
   } else {
     replies.push(formatter.formatMsg(`Sorry I couldn't find any information regarding ${list.value}`))
   }
