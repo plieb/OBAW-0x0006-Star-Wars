@@ -4,6 +4,7 @@ const actions = {
   'get-info-film': require('./get-info-film'),
   'get-info-starship': require('./get-info-starship'),
   'get-info-vehicle': require('./get-info-vehicle'),
+  'list': require('./list'),
 }
 
 export default function handleAction(res, message) {
