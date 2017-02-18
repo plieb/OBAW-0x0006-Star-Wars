@@ -3,6 +3,8 @@
 
 This bot is part of the #[OBAW](https://github.com/plieb/OBAW) project - Week 0x0006 - Star Wars
 
+Medium publication project page #[OBAW](https://medium.com/the-obaw-project)
+
 # Star Wars Bot for Facebook Messenger using Recast.AI
 
 A [SWAPI](http://swapi.co/)-powered bot using [Recast.AI](https://recast.ai) NLP and [Bot Connector](https://botconnector.recast.ai)
