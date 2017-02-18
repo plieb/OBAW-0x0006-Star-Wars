@@ -22,10 +22,4 @@ exports.formatQuickReplies = (quickRp, res) => {
       },
     }
   }
-  return {
-    type: 'quickReplies',
-    content: {
-      buttons: elements,
-    },
-  }
 }
