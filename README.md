@@ -1,9 +1,11 @@
 [logo]: https://github.com/plieb/OBAW-0x0006-Star-Wars/blob/master/assets/OBAW%20-%20Week%200x0006.png "Star Wars + Recast.AI"
 ![Star Wars + Recast.AI][logo]
 
-This bot is part of the #[OBAW](https://github.com/plieb/OBAW) project - Week 0x0006 - Star Wars
+This bot is part of the #[OBAW Github](https://github.com/plieb/OBAW) project - Week 0x0006 - Star Wars
 
-Medium publication project page #[OBAW](https://medium.com/the-obaw-project)
+Medium publication project page #[OBAW Medium](https://medium.com/the-obaw-project)
+
+Medium publication Star Wars page #[OBAW Star Wars](https://medium.com/the-obaw-project/obaw-project-week-0x0006-star-wars-a09b3be352b5#)
 
 # Star Wars Bot for Facebook Messenger using Recast.AI
 
@@ -31,12 +33,12 @@ Follow the instructions below to create your own instance of the bot:
 1. Click the button **New Bot** and define the bot as follows
 
     - Bot Name: Star Wars Bot
-    - Bot URL: enter your Heroku URL
+    - Bot URL: enter your Heroku URL + **/webhook** (MY_HEROKU_URL.heroku.com/webhook/)
 
 1. In **Settings** find your `slug`, `token` and `bot ID`. Copy paste those values in the **Config Variables** section of your Heroku app to `BC_USER_SLUG`, `BC_USER_TOKEN` and `BC_BOT_ID`
 1. Get back to your Bot Connector account and add a Messenger channel. Give it a name and follow step 1 to 4 in order to get your **Secret Key** & **Page Token**
 
-## Step 3: Get your Recast bot
+## Step 3: Get your Recast.AI bot
 
 1. Make sure you are logged in to your [Recast.AI account](https://recast.ai/)
 1. Follow this link [Star Wars Wiki Bot](https://recast.ai/pe/obaw-0x0006-star-wars/learn) and fork the bot to your account
