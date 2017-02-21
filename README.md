@@ -33,7 +33,7 @@ Follow the instructions below to create your own instance of the bot:
 1. Click the button **New Bot** and define the bot as follows
 
     - Bot Name: Star Wars Bot
-    - Bot URL: enter your Heroku URL + **/webhook** (MY_HEROKU_URL.heroku.com/webhook/)
+    - Bot URL: enter your Heroku URL + **/webhook** (MY_HEROKU_URL.heroku.com/webhook)
 
 1. In **Settings** find your `slug`, `token` and `bot ID`. Copy paste those values in the **Config Variables** section of your Heroku app to `BC_USER_SLUG`, `BC_USER_TOKEN` and `BC_BOT_ID`
 1. Get back to your Bot Connector account and add a Messenger channel. Give it a name and follow step 1 to 4 in order to get your **Secret Key** & **Page Token**
